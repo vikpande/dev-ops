@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - 6
+
+cache:
+  yarn: true
+  directories:
+    - dog-city/node_modules
+    - locationserver/node_modules
+    - nameserver/node_modules
+
+script:
+  - cd dog-city
+  - yarn
+  - yarn test
+  - cd locationserver
+  - yarn
+  - yarn test
+  - cd nameserver
+  - yarn
+  - yarn test
