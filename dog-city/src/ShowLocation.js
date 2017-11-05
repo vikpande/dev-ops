@@ -3,28 +3,30 @@ import { Link } from 'react-router-dom'
 import serializeForm from 'form-serialize'
 import escapeRegExp from 'escape-string-regexp'
 
+import * as LocationApi from './utils/LocationAPI';
+
 class ShowLocation extends Component {
-  handleSubmit = (e) => {
-    e.preventDefault()
-    const values = serializeForm(e.target, { hash: true })
-    if (this.props.onCreateContact)
-      this.props.onCreateContact(values)
+  constructor() {
+    super();
+    this.state = {
+      locations: []
+    }
+  }
+
+  componentDidMount() {
+    LocationApi.getAll().then(locations => {
+      this.setState({ locations });
+    });
   }
 
   render() {
-    const { locations } = this.props
-
-    let showingLocations
-    if (locations) {
-      const match = new RegExp(escapeRegExp(locations), 'i')
-      showingLocations = locations.filter((location) => match.test(location.id))
-    } else {
-      showingLocations = "null"
-    }
     return (
       <div>
-        <Link className='show-location' to='/'>Show Location</Link>
-        {showingLocations.id === locations.id }
+        {this.state.locations.map(l => (
+          <div key={l.id}>
+            {l.id} - {l.location}
+          </div>
+        ))}
       </div>
     )
   }

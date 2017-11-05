@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
+import showlocation from "./ShowLocation"
 
 class ListContacts extends Component {
   static propTypes = {
@@ -33,7 +34,6 @@ class ListContacts extends Component {
     } else {
       showingContacts = contacts
     }
-
     showingContacts.sort(sortBy('name'))
 
     return (
@@ -62,9 +62,11 @@ class ListContacts extends Component {
         <ol className='contact-list'>
           {showingContacts.map((contact) => (
             <li key={contact.id} className='contact-list-item'>
-              <div className='contact-avatar' style={{
-                backgroundImage: `url(${process.env.REACT_APP_CONTACTS_API_URL}${contact.avatarURL})`
-              }}/>
+              <Link to={`contact/${contact.id}`} >
+                <div className='contact-avatar' style={{
+                  backgroundImage: `url(${process.env.REACT_APP_CONTACTS_API_URL}${contact.avatarURL})`
+                }} />
+              </Link>
               <div className='contact-details'>
                 <p>{contact.name}</p>
                 <p>{contact.email}</p>

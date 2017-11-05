@@ -1,4 +1,4 @@
-const api = process.env.REACT_APP_LOCATIONS_API_URL || 'http://localhost:8001'
+const api = process.env.REACT_APP_LOCATIONS_API_URL || 'http://localhost:5002'
 
 let token = localStorage.token
 
