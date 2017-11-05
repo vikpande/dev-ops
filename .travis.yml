@@ -13,9 +13,3 @@ script:
   - cd dog-city
   - yarn
   - yarn test
-  - cd locationserver
-  - yarn
-  - yarn test
-  - cd nameserver
-  - yarn
-  - yarn test
