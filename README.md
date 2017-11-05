@@ -19,29 +19,49 @@ The project has three repo's a client and a server ( client is a react app and t
 
 Install :
 
- yarn or npm and
- node
+ ```
+ yarn
+ ```
+and
+
+```
+node
+```
 
 Once installed run the following command on each of the repo:
 
 * Change to server directory (cd nameserver) and run the following commands on terminal to start the server:
+
+ ```
  yarn or npm install
- node server or yarn start
+ ``` 
+ ```
+ node server.js or yarn start
+ ```
 
 This will render the ContactsAPI details at localhost:5001
 
 
 * Change to server directory (cd locationserver) and run the following commands on terminal to start the server:
+ 
+ ```
  yarn or npm install
- node server or yarn start
+ ``` 
+ ```
+ node server.js or yarn start
+ ```
 
 This will render the LocationAPI details at localhost:5002
 
 * After you have started both the API server, change to client directory (cd dog-city).
  Now run the following commands on terminal to start the client:
 
+ ```
  yarn or npm install
- yarn start or npm run start
+ ``` 
+ ```
+ node server.js or yarn start
+ ```
 
 This will start the client app at localhost:3000
 
