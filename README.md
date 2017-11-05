@@ -65,7 +65,7 @@ This will render the LocationAPI details at localhost:5002
 
 This will start the client app at localhost:3000
 
-* Links to the tools used in applcation:
+Links to the tools used in application:
 - View the code quality here:  [https://bettercodehub.com/results/vikpande/dev-ops]
 - View the application architecture here: [https://www.codacy.com/app/vikpande/dev-ops/dashboard?bid=5721642]
 - View the application architecture here: [https://travis-ci.org/vikpande/dev-ops]
