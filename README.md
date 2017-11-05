@@ -30,7 +30,7 @@ node
 
 Once installed run the following command on each of the repo:
 
-* Change to server directory (cd nameserver) and run the following commands on terminal to start the server:
+* Change to name server directory (cd nameserver) and run the following commands on terminal to start the server:
 
  ```
  yarn or npm install
@@ -42,7 +42,7 @@ Once installed run the following command on each of the repo:
 This will render the ContactsAPI details at localhost:5001
 
 
-* Change to server directory (cd locationserver) and run the following commands on terminal to start the server:
+* Change to location server directory (cd locationserver) and run the following commands on terminal to start the server:
  
  ```
  yarn or npm install
@@ -60,7 +60,7 @@ This will render the LocationAPI details at localhost:5002
  yarn or npm install
  ``` 
  ```
- node server.js or yarn start
+ yarn start
  ```
 
 This will start the client app at localhost:3000
