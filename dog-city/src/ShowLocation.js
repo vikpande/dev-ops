@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import serializeForm from 'form-serialize'
-import escapeRegExp from 'escape-string-regexp'
-
 import * as LocationApi from './utils/LocationAPI';
 
 class ShowLocation extends Component {
