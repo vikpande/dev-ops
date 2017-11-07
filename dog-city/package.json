@@ -8,6 +8,7 @@
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "serve": "^6.4.1",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
@@ -17,6 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "now-start": "serve build/",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
