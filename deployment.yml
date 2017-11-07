@@ -1,0 +1,60 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: client
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000
+    name: dog-city
+  selector:
+    app: dog-city
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: location
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 5002
+    name: locationserver
+  selector:
+    app: locationserver
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: name
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 5001
+    name: nameserver
+  selector:
+    app: nameserver
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: client
+  labels:
+    app: dog-city
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dog-city
+  template:
+    metadata:
+      labels:
+        app: dog-city
+    spec:
+      containers:
+      - image: vikpande/dog-city
+        name: dog-city
+        ports:
+        - containerPort: 3000
