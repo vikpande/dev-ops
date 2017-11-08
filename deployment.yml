@@ -1,48 +1,67 @@
-kind: Service
+---
 apiVersion: v1
+kind: Service
 metadata:
   name: client
+  labels:
+    app: dog-city
+    bytes: dog-city
 spec:
-  type: LoadBalancer
   ports:
-  - port: 80
-    targetPort: 3000
-    name: dog-city
+  - port: 3000
   selector:
     app: dog-city
 ---
-kind: Service
 apiVersion: v1
-metadata:
-  name: location
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 5002
-    name: locationserver
-  selector:
-    app: locationserver
----
 kind: Service
-apiVersion: v1
 metadata:
   name: name
+  labels:
+    app: nameserver
+    bytes: nameserver
 spec:
-  type: LoadBalancer
   ports:
-  - port: 80
-    targetPort: 5001
-    name: nameserver
+  - port: 5001
   selector:
     app: nameserver
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: location
+  labels:
+    app: locationserver
+    bytes: locationserver
+spec:
+  ports:
+  - port: 5002
+  selector:
+    app: locationserver
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: dev-ops
+spec:
+  tls:
+   - secretName: 
+  rules:
+  - host:  
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: client
+          servicePort: 3000
+---
+apiVersion: v1
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
   name: client
   labels:
     app: dog-city
+    bytes: dog-city
 spec:
   replicas: 1
   selector:
@@ -52,9 +71,60 @@ spec:
     metadata:
       labels:
         app: dog-city
+        bytes: dog-city
     spec:
       containers:
-      - image: vikpande/dog-city
+      - image: 
         name: dog-city
         ports:
-        - containerPort: 3000
+        - containerPort: 3001
+---
+apiVersion: v1
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: name
+  labels:
+    app: nameserver
+    bytes: nameserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nameserver
+  template:
+    metadata:
+      labels:
+        app: nameserver
+        bytes: nameserver
+    spec:
+      containers:
+      - image: 
+        name: nameserver
+        ports:
+        - containerPort: 3002
+        ---
+apiVersion: v1
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: location
+  labels:
+    app: locationserver
+    bytes: locationserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: locationserver
+  template:
+    metadata:
+      labels:
+        app: locationserver
+        bytes: locationserver
+    spec:
+      containers:
+      - image: 
+        name: locationserver
+        ports:
+        - containerPort: 3003
