@@ -39,7 +39,8 @@ Once installed run the following command on each of the repo:
  node server.js or yarn start
  ```
 
-This will render the ContactsAPI details at localhost:5001
+This will render the ContactsAPI locally at localhost:5001 and the API is hosted on cloud at :
+- https://contacts-server-fbvlerenda.now.sh
 
 
 * Change to location server directory (cd locationserver) and run the following commands on terminal to start the server:
@@ -51,7 +52,8 @@ This will render the ContactsAPI details at localhost:5001
  node server.js or yarn start
  ```
 
-This will render the LocationAPI details at localhost:5002
+This will render the LocationAPI locally at localhost:5002 and the API is hosted on cloud at :
+- https://locationserver-jyqbbolqdq.now.sh 
 
 * After you have started both the API server, change to client directory (cd dog-city).
  Now run the following commands on terminal to start the client:
@@ -69,3 +71,8 @@ Links to the tools used in application:
 - View the code quality here:  [https://bettercodehub.com/results/vikpande/dev-ops]
 - View the application architecture here: [https://www.codacy.com/app/vikpande/dev-ops/dashboard?bid=5721642]
 - View the application architecture here: [https://travis-ci.org/vikpande/dev-ops]
+
+This app uses Docker and Kubernetes to containerize and orchectrate. The docker images can be found below: 
+- https://hub.docker.com/r/vikpande/nameserver/ 
+- https://hub.docker.com/r/vikpande/locationserver/ 
+ 
