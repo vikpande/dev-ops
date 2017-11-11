@@ -72,7 +72,11 @@ Links to the tools used in application:
 - View the application architecture here: [https://www.codacy.com/app/vikpande/dev-ops/dashboard?bid=5721642]
 - View the application architecture here: [https://travis-ci.org/vikpande/dev-ops]
 
-This app uses Docker and Kubernetes to containerize and orchectrate. The docker images can be found below: 
+This app uses Docker and Kubernetes to containerize and orchectrate. The docker images can be found at the below link: 
 - https://hub.docker.com/r/vikpande/nameserver/ 
 - https://hub.docker.com/r/vikpande/locationserver/ 
+
+THe project management was done using the task and issue management feature of GitHub. Please visit the below link :
+- https://github.com/vikpande/dev-ops/projects/1 
+The board lists down "completed", and "to-do" tasks and issues. 
  
