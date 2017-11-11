@@ -74,7 +74,7 @@ spec:
         bytes: dog-city
     spec:
       containers:
-      - image: 
+      - image: vikpande/dog-city
         name: dog-city
         ports:
         - containerPort: 3001
@@ -99,7 +99,7 @@ spec:
         bytes: nameserver
     spec:
       containers:
-      - image: 
+      - image: vikpande/nameserver
         name: nameserver
         ports:
         - containerPort: 3002
@@ -124,7 +124,7 @@ spec:
         bytes: locationserver
     spec:
       containers:
-      - image: 
+      - image: vikpande/locationserver
         name: locationserver
         ports:
         - containerPort: 3003
