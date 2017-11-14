@@ -74,7 +74,7 @@ spec:
         bytes: dog-city
     spec:
       containers:
-      - image: vikpande/dog-city
+      - image: 
         name: dog-city
         ports:
         - containerPort: 3001
