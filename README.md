@@ -65,7 +65,10 @@ This will render the LocationAPI locally at localhost:5002 and the API is hosted
  yarn start
  ```
 
-This will start the client app at localhost:3000
+This will start the client app at localhost:3000 
+OR 
+view the app directly at the follwing path:
+https://build-zdpzqowdse.now.sh 
 
 Links to the tools used in application:
 - View the code quality here:  [https://bettercodehub.com/results/vikpande/dev-ops]
